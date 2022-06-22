@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+.btn {
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  color: green;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 1; /*重なり順序　1番目*/
+}
+
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgb(255 0 125 / .7); /*　透明度コントロール　*/
+  transform: translateX(-100%); /*X軸-100％の位置に隠す*/
+  transition: .3s cubic-bezier(.8,.07,.38,.95); /*cubicベジェで動きをアニメーション　*/
+}
+
+body.open .nav { /*bodyにオープンのクラスがついたときのnavの形*/
+  transform: translateX(0);
+}
+
+.nav ul {
+  padding: 40px;
+}
+
+.nav ul li {
+  margin-bottom: 2em;
+  list-style: none;
+}
+
+.nav ul li a {
+  color: #fff;
+}
